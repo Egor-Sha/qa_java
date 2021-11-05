@@ -2,11 +2,13 @@ package ru.yandex;
 
 import java.util.List;
 
-public class Lion extends Animal {
+public class Lion {
 
     boolean hasMane;
+    Feline feline;
 
     public Lion(String sex, Feline feline) throws Exception {
+        this.feline = feline;
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -26,7 +28,7 @@ public class Lion extends Animal {
     }
 
     public List<String> getFood() throws Exception {
-        return getFood("Хищник");
+        return feline.getFood("Хищник");
     }
 }
 

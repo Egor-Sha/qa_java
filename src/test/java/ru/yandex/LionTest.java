@@ -10,15 +10,16 @@ public class LionTest {
 
     @Test (expected = Exception.class)
     public void doesHaveManeExceptionTest() throws Exception {
-        final String unknownSex = "Неизвестно";
+        String unknownSex = "Неизвестно";
         new Lion(unknownSex, feline);
     }
 
     @Test (expected = Exception.class)
     public void getFoodExceptionTest() throws Exception {
-        final String correctFelineSex = "Самка";
-        final String unknownAnimalKind = "Хищник2";
-        final Lion lion = new Lion(correctFelineSex, feline);
-        lion.getFood(unknownAnimalKind);
+        Feline feline = new Feline();
+        String correctFelineSex = "Самка";
+        String unknownAnimalKind = "Неизвестный";
+        Lion lion = new Lion(correctFelineSex, feline);
+        feline.getFood(unknownAnimalKind);
     }
 }

@@ -7,7 +7,5 @@ public class StartTest {
 
     @Before
     public void init() {
-
-        MockitoAnnotations.openMocks(this);
-    }
+        MockitoAnnotations.openMocks(this);}
 }

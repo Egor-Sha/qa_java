@@ -13,24 +13,19 @@ public class CatTest {
 
     @Test
     public void getCatSoundTest() {
-        final Cat cat = new Cat(feline);
-        final String expectedSound = "Мяу";
-        final String actualSound = cat.getSound();
+        Cat cat = new Cat(feline);
+        String expectedSound = "Мяу";
+        String actualSound = cat.getSound();
         assertEquals("Wrong sound", expectedSound, actualSound);
     }
 
     @Test
-    public void getMeatFoodListForPredatorTest() {
+    public void getMeatFoodListForPredatorTest() throws Exception{
         Feline feline = new Feline();
-        final Cat cat = new Cat(feline);
+        Cat cat = new Cat(feline);
         List<String> expectedFoodList = List.of("Животные", "Птицы", "Рыба");
-        List<String> actualFoodList = null;
-        try {
-            actualFoodList = cat.getFood();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        List<String> actualFoodList = cat.getFood();
         assertEquals(expectedFoodList, actualFoodList);
     }
-
 }
+
