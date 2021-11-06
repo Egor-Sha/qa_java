@@ -1,11 +1,14 @@
 package ru.yandex;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 
+@RunWith(MockitoJUnitRunner.class)
 public class CatTest {
 
     @Mock
@@ -21,11 +24,10 @@ public class CatTest {
 
     @Test
     public void getMeatFoodListForPredatorTest() throws Exception{
-        Feline feline = new Feline();
         Cat cat = new Cat(feline);
+        Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> expectedFoodList = List.of("Животные", "Птицы", "Рыба");
         List<String> actualFoodList = cat.getFood();
         assertEquals(expectedFoodList, actualFoodList);
     }
 }
-

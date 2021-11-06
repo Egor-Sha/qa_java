@@ -17,9 +17,6 @@ public class LionParameterizedTest {
         this.sex = sex;
         this.expectedMane = expectedMane;
     }
-
-    @Mock
-    private Feline feline;
     
     @Parameterized.Parameters
     public static Object[][] giveSexGetManeExistingDataTest() {
@@ -31,9 +28,8 @@ public class LionParameterizedTest {
 
     @Test
     public void doesHaveManeTest() throws Exception {
-        Lion lion = new Lion(sex, feline);
+        Lion lion = new Lion(sex, null);
         boolean actualMane = lion.doesHaveMane();
         assertEquals(expectedMane, actualMane);
     }
-
 }
